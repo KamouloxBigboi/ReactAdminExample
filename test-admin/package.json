@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/styled-engine-sc": "^5.10.16",
+    "@mui/system": "^5.10.17",
     "add": "^2.0.6",
     "ra-data-json-server": "^4.6.1",
     "react": "^18.2.0",
     "react-admin": "^4.6.1",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

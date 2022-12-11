@@ -18,6 +18,7 @@ export const UserList = () => {
           <TextField source="name" />
           <EmailField source="email" />
           <TextField source="phone" />
+          <MyUrlField source="website" />
           <TextField source="company.name" />
         </Datagrid>
       )}
