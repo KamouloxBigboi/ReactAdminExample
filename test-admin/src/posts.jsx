@@ -9,11 +9,12 @@ import {
     SimpleForm,
     ReferenceInput,
     TextInput,
+    useRecordContext
   } from "react-admin";
   
 
 export const PostList = () => (
-  <List>
+  <List filters={postFilters}>
     <Datagrid>
       <TextField source="id" />
       <ReferenceField source="userId" reference="users" />
@@ -23,8 +24,18 @@ export const PostList = () => (
   </List>   
 );
 
+const postFilters = [
+  <TextInput source="q" label="Search" alwaysOn />,
+  <ReferenceInput source="userId" label="User" reference="users" />,
+];
+
+const PostTitle = () => {
+    const record = useRecordContext();
+    return <span>Post {record ? `"${record.title}"` : ''}</span>;
+  };
+
 export const PostEdit = () => (
-    <Edit>
+  <Edit title={<PostTitle />}>
       <SimpleForm>
       <TextInput source="id" disabled />
         <ReferenceInput source="userId" reference="users" />
@@ -43,3 +54,4 @@ export const PostCreate = () => (
       </SimpleForm>
     </Create>
   );
+
